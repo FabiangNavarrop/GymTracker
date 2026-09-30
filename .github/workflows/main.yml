@@ -1,0 +1,46 @@
+node_modules
+android/build
+android/app/build
+android/.gradle
+
+{
+  "appId": "com.gymtracker.app",
+  "appName": "GymTracker",
+  "webDir": "www"
+}
+
+{
+  "name": "gymtracker",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.0"
+  }
+}
+
+# GymTracker (Capacitor)
+
+## Opción A: Android Studio (en tu PC)
+1. Instala Node 20+, Java 21 y Android Studio.
+2. En esta carpeta:
+   npm install
+   npx cap add android
+   npx cap sync android
+   npx cap open android
+3. En Android Studio: Build > Build Bundle(s) / APK(s) > Build APK(s).
+4. El APK queda en android/app/build/outputs/apk/debug/app-debug.apk
+
+## Opción B: Sin instalar nada (GitHub Actions)
+1. Crea un repositorio en github.com y sube todo el contenido de esta carpeta.
+2. Ve a la pestaña Actions > "Build APK" (se ejecuta solo al subir, o pulsa Run workflow).
+3. Al terminar, entra a la ejecución y descarga "GymTracker-apk" (un .zip con el APK).
+
+## Instalar en el teléfono
+Pasa el APK al teléfono y ábrelo. Activa "Instalar apps de origen desconocido" si te lo pide.
+
+## Editar la app
+Todo el código está en www/index.html. Tras cambiarlo: npx cap sync android
